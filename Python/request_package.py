@@ -1,4 +1,4 @@
-#bash :pip install request
+#bash :pip install request입력/pip(파이썬 패키지 관리도구)
 import requests
 
 url = 'https://random-data-api.com/api/v2/users'
