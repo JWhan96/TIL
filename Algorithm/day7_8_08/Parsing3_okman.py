@@ -9,15 +9,14 @@ pass
 arr = input()
 
 def Okman(arr):
-    d=1
+
     result = 0
-    oklist = [item for item in arr.split('_') if item != '']  # ['', '', '', '', 'bck', '', '', '', 'a', 'c', 'k', '']
+    oklist = [item for item in arr.split('_') if item != '']  # ['bck', 'a', 'c', 'k']
+    unit_list = [item for item in arr if item != '_']  # ['b', 'c', 'k', 'a', 'c', 'k']
 
     for i in oklist:
         if i == 'bad' or i =='no' or i =='puck':
             result += 1
-
-
 
     for i in range(len(arr) - 5 + 1):
         count = 0
@@ -29,18 +28,16 @@ def Okman(arr):
             if count == 5:
                 result += 1
 
-
-    for i in oklist:
+    for i in unit_list:
         if i.isdigit():
             result += 1
             break
 
-    for j in oklist:
-        if j != '_':
-            cntresult = oklist.count(j)
-            if cntresult > 5:
-                result += 1
-                break
+    for j in unit_list:
+        cntresult = unit_list.count(j)
+        if cntresult > 5:
+            result += 1
+            break
 
     return result
 result = Okman(arr)
