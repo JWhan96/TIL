@@ -22,9 +22,6 @@ def Okman(arr):
         count = 0
         if arr[i] == '_':
             for k in range(5):
-                if arr[i+k] == '_':
-                    count += 1
-                else: break
             if count == 5:
                 result += 1
 

@@ -21,7 +21,7 @@ CalcSum(n)
     return sum;
 ```
 2. 순서도
-- ![Alt text](flow_chart.png)
+- ![Alt text](img\flow_chart.png)
 
 #### 무엇이 좋은 알고리즘인가
 1. 정확성
@@ -37,7 +37,7 @@ CalcSum(n)
 - 시간 복잡도 함수 중에서 가장 큰 영향력을 주는 n의 항만을 표시
 - 계수는 생략
 - Big_O 시간 속도 비교
-- ![Alt text](Big-O_compare_speed.png)
+- ![Alt text](img/Big-O_compare_speed.png)
 
 ### 배열
 - 배열: 일정한 자료형의 변수들을 하나의 이름으로 열거하여 사용하는 자료구조
@@ -84,7 +84,7 @@ Num2 = 2;  Num5 = 5;
 - 시간복잡도
   - O(n^2)
 #### 버블 정렬 과정
-- ![Alt text](Bubble_Sort.png)
+- ![Alt text](img/Bubble_Sort.png)
 #### 버블 정렬 알고리즘
 ```c
 BubbleSort(a, N)                  # 정렬할 배열과 배열의 크기

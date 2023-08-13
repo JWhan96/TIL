@@ -16,6 +16,28 @@
 # 3. 괄호가 부정확한 데이터는 입력 X
 # 4. 괄호 안에는 모두 숫자로 구성
 #
+word = input()
+result = 0
+for i in range(len(word)):
+    d=1
+    temp = ''
+    #현재 검사할 문자의 다음 인덱스
+    index = i + 1
+    if word[i] == '[':
+        while word[index] != ']':
+            #임시 문자열 temp변수에 현재 문자 추가
+            temp += word[index]
+            index += 1
+            # print(temp)
+        result += int(temp)
+        # print(temp)
+    elif word[i] == '{':
+        while word[index] != '}':
+            temp += word[index]
+            index += 1
+        result *= int(temp)
+print(result)
+
 # arr = list(input())
 #
 # for i in range(len(arr)):
@@ -32,28 +54,3 @@
 #             if arr[j] == '}':
 #                 print(j)
 #                 break
-
-word = input()
-result = 0
-for i in range(len(word)):
-    temp = ''
-    #현재 검사할 문자의 다음 인덱스
-    index = i + 1
-    if word[i] == '[':
-        while word[index] != ']':
-            #임시 문자열 temp변수에 현재 문자 추가
-            temp += word[index]
-            index += 1
-            print(temp)
-        result += int(temp)
-        print(temp)
-    elif word[i] == '{':
-        while word[index] != '}':
-            temp += word[index]
-            index += 1
-        result *= int(temp)
-print(result)
-#
-# a = 'ab'
-# a += 'c'
-# print(a)

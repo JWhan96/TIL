@@ -1,23 +1,27 @@
 ## 고지식한 패턴 검색
 
-t = 'This is a book~!'
-p = 'is'
-N = len(t)
-M = len(p)
+n = 'Thid is a book~!'
+m = 'is'
+N = len(n)
+M = len(m)
 
-def BruteForce(p, t):
-    i = 0 #t의 인덱스
-    j = 0 #p의 인덱스
-    while j < M and i < N:
-        if t[i] != p[j]:
-            i = i - j
-            j= -1
-        i = i+1
-        j = j+1
-    if j ==M : return i -M  #검색성공
-    else: return -1 #검색실패
+def BruteForce(n, m):
+    d = 1
+    n_index = 0 #n의 인덱스
+    m_index = 0 #m의 인덱스
+    while m_index < M and n_index < N:
+        if n[n_index] != m[m_index]:
+            n_index = n_index - m_index + 1
+            m_index = -1
+        n_index = n_index + 1
+        m_index = m_index + 1
+    if m_index == M :
+        return n_index - M  #검색성공
 
-print(BruteForce(p,t))
+    else:
+        return -1 #검색실패
+
+print(BruteForce(n,m))
 
 
 

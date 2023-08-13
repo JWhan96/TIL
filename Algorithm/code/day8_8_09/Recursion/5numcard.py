@@ -39,6 +39,7 @@ cnt = 0
 
 def card_cnt(level):
     global cnt
+    d=1
     # 4장의 카드를 뽑았으면 경우의 수 증가
     if level == 4:
         cnt += 1

@@ -37,4 +37,5 @@ for i in range(4):
         Right(arr)
     if T[i] == 'L':
         Left(arr)
+
 print(*arr)

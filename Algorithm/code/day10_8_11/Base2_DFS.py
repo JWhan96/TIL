@@ -60,13 +60,10 @@ def DFS(n, V, adj_m):
         for w in range(1, V): # 현재 정점 n에 인접하고 미방문 w 찾기
             if adj_m[n][w] == 1 and visited[w] == 0:
                 stack.append(n)
-
                 n = w  #새로 옮겨갈 위치 w
                 stack.append(n)
                 if len(stack) == 3:
-                    for i in stack:
-                        print(i, end = ' ')
-                    print()
+                    print(*stack)
                 stack.pop()
 
                 visited[n] = 1 # w 방문 표시
