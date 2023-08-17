@@ -19,7 +19,7 @@ for tc in range(1, T+1):
     print(f'#{tc} {cnt}')
 
 ###### 승희 코드
- # red = 1
+# red = 1
 # blue = 2
 T = int(input())
 for testcase in range(1, T+1):
