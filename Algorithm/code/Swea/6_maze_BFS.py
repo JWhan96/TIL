@@ -21,7 +21,7 @@ def BFS(y, x):
             nx = cx + dx
             if 0 <= ny < N and 0 <= nx < N: #범위이내
                 if arr[ny][nx] != 1 and visited[ny][nx] == 0: #벽이 아니고 방문안한 경우
-                    visited[ny][nx] = visited[cy][cx] + 1 # 거리갱ㅅ ㅣㄴ
+                    visited[ny][nx] = visited[cy][cx] + 1 # 거리갱신
                     queue.append((ny, nx)) #큐에 추가
 
     return 0 # 경로없으면 0반환
