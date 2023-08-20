@@ -5,13 +5,14 @@ direction = [(1, 0), (-1, 0), (0, 1), (0, -1)]
 
 
 def BFS(y, x):
+
     queue = deque()
     queue.append((y, x)) # 시작 위치 큐에 추가
     visited = [[0] * N for _ in range(N)]
     visited[y][x] = 1 # 시작위치 방문 표시
 
     while queue:
-        pprint(visited)
+        # pprint(visited)
         cy, cx = queue.popleft()
 
         if arr[cy][cx] == 3: #도착위치면 거리반환

@@ -2,8 +2,8 @@
 - 비선형 구조인 그래프 구조는 그래프로 표현된 모든 자료를 빠짐없이 검색하는 것이 중요
 - 두 가지 방법
   - 깊이 우선 탐색 (Depth First Search, DFS) <- Stack
-  - 너비 우선 탐색 (Breadth First Search, BFS) <- Queue
-![Alt text](image.png)
+  - 너비 우선 탐색 (Breadth First Search, BFS) <- Queue   
+ ![Alt text](image.png)
 
 #### DFS(깊이 우선 탐색)
 - 시작 방향으로 갈 수 있는 경로로 끝까지 깊이 탐색 후 다른 갈림길도 동일한 방식으로 탐색을 반복하여 모든 정점을 방문하는 순회방법

@@ -40,7 +40,8 @@ CalcSum(n)
 - 시간 복잡도 함수 중에서 가장 큰 영향력을 주는 n의 항만을 표시
 - 계수는 생략
 - Big_O 시간 속도 비교
-- ![Alt text](img/Big-O_compare_speed.png)
+
+- <img src= img/Big-O_compare_speed.png width = 30% height = 30%>
 
 ### 배열
 - 배열: 일정한 자료형의 변수들을 하나의 이름으로 열거하여 사용하는 자료구조

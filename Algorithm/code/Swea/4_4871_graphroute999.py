@@ -50,7 +50,7 @@ def DFS(start, end):
 
 for tc in range(1, T+1):
     V, E = map(int, input().split())  # 노드와, 간선의 개수
-    node= [[0 for _ in range(V+1)] for _ in range(V+1)]  # 인접행렬 초기화
+    node = [[0 for _ in range(V+1)] for _ in range(V+1)]  # 인접행렬 초기화
     for _ in range(E):
         start, end = map(int, input().split())
         node[start][end] = 1 # 해당 인접행렬에 1할당 -> 연결됨

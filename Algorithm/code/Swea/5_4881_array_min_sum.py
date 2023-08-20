@@ -23,6 +23,7 @@
 
 def DFS(idx, now_sum):
     global min_sum
+    d=1
     if now_sum >= min_sum: #현재 합이 최소 합보다 크면 탐색 X
         return
     if idx == N: #모든 행을 선택
@@ -34,6 +35,7 @@ def DFS(idx, now_sum):
             used[i] = 1
             DFS(idx + 1, now_sum + arr[idx][i]) # 행을 다음행으로 넘어가면서 재귀 호출
             used[i] = 0 #복구 (백트래킹)
+
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
