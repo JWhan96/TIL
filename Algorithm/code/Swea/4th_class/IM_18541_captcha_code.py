@@ -1,3 +1,25 @@
+T= int(input())
+for tc in range(1, T+1):
+    N, K = map(int, input().split())
+    sample = list(map(int, input().split()))
+    passcode = list(map(int, input().split()))
+
+    count = 0
+    u = 0
+    for i in range(K): # passcode 인덱스
+        for j in range(u, N): # sample 인덱스
+            if sample[j] == passcode[i]:
+                count += 1
+                u = j
+                break
+    if count == K:
+        print(f'#{tc} {1}')
+    else:
+        print(f'#{tc} {0}')
+
+
+
+##################
 '''
 입력
 첫번째 줄에는 테스트 케이스 T가 주어진다
@@ -19,9 +41,6 @@
 출력
 
 '''
-
-
-
 #코코가 개발한 코드생성기
 # 1. 랜덤으로 N개 길이의 Sample이 주어진다
 # 2. 그리고 K개 길이의 Passcode가 주어진다
