@@ -1,6 +1,6 @@
 
 
-
+arr = [list(map(int, input().split())) for _ in range(N)]
 
 
 
@@ -22,7 +22,7 @@
 #     # N : 농장의 길이
 #     N = int(input())
 #     # arr : 농장 수확물 배열
-#     arr = [list(map(int, input())) for _ in range(N)]
+#     arr = [list(map(int, input().split())) for _ in range(N)]
 #
 #     # 로직
 #     # 누적 변수
