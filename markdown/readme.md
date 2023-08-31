@@ -53,6 +53,7 @@ ___기울이기굵게___
 
 </span>
 
+- <span style = 'color:salmon'> 글자색 </span>
 
 # 웹 url 
 [네이버](https://www.naver.com)
@@ -62,6 +63,12 @@ ___기울이기굵게___
 ![수달](https://postfiles.pstatic.net/MjAyMjExMzBfMjQ2/MDAxNjY5ODA3MjUyMzc0.PhYt7FqOjXV00jHhy5hnSwO5LgbBSqCCD1EWNc0PFskg.QyG1KOpbQE84fu8iwVf_ENKQpPKoBhAybAUiqhpumd0g.JPEG.shinyouly/IMG%EF%BC%BF61102.JPG?type=w966)
 
 ![수달2](https://postfiles.pstatic.net/MjAyMjExMzBfMjcx/MDAxNjY5ODA3MjUzODIx.jhZ_tTvbpc9vfr1ESKKEDhWC4LrgcmyOX4mpjPWcLlMg.bRwSdebioFEvYzuh5vqpHjy78QztNeXGS45CAM4j5o0g.JPEG.shinyouly/IMG%EF%BC%BF20150401%EF%BC%BF2306252.jpg?type=w966)
+
+![수달3](image.png)
+
+![수달4](img/image-1.png)
+
+<img src="img/image-1.png" width="30%" height="30%">
 
 # 코드 블록
 (언어 설정가능)
@@ -115,3 +122,12 @@ print(a+b)
 강제 개행을 하고싶으면    
 공백을 2칸이상 띄우면  
 개행이 가능
+
+
+<details>
+<summary>접기 방법</summary>
+
+<!-- summary 아래 한칸 공백 두어야함 -->
+펴기!
+
+</details>
