@@ -2,6 +2,7 @@
 ## 헤더2
 ### 헤더3
 #### 헤더4
+[헤더로 이동하기](#강제개행)
 
 [마크다운 방법 참조](https://github.com/ByungJun25/Wiki/blob/master/Markdown/Example.md#%EB%A8%B8%EB%A6%AC%EB%A7%90-header)
 # ordered 리스트 적기
