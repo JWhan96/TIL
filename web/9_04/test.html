@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 한글 깨지는거 방지 -->
+    <meta charset="UTF-8">
+    <!-- 키워드, 설명, 제작자 등... -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- tab에 뜨는 title -->
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        background-color: aqua;
+    } */
+    .ppp{
+        color: greenyellow;
+        background-color: pink;
+        font-size: 100px;
+    }
+    @keyframes zoom {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2); /* 1.5배 확대 */
+    }
+    }
+
+    .blinking-zoom {
+    animation: blink 2s infinite, zoom 0.5s infinite; /* 2초 간격으로 무한 반복 */
+    display: inline-block; /* 요소가 텍스트처럼 표시되도록 설정 */
+    }
+    @keyframes rotateClockwise {
+    0% {
+    transform: rotate(0deg);
+    }
+    20% {
+    transform: rotate(360deg); /* 360도 회전 (한 바퀴) */
+    }
+    }
+    .rotating-element {
+    animation: rotateClockwise 6s linear infinite; /* 4초 간격으로 무한 반복 */
+    
+    /* 여기에 요소의 초기 스타일을 지정할 수 있습니다. */
+    }
+</style>
+<body>
+    <h1>프론트 엔드 첫 수업</h1>
+    <!-- ol>li*3 리스트 3개-->
+    <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ol>
+    <!-- ol>.hello*3 클래스설정 리스트 3개-->
+    <ol>
+        <li class="hello"></li>
+        <li class="hello"></li>
+        <li class="hello"></li>
+    </ol>
+    <!-- ol>#hi  아이디 설정 리스트-->
+    <ol>
+        <li id="hi"></li>
+    </ol>
+    <img class="blinking-zoom" src=c:\Users\SSAFY\Desktop\다운로드(1).jpg alt="">
+    <!-- p*3 p태그 3개 -->
+    <p class="">HTML은 너무 어렵다 <br> CSS도 너무 어렵다</p>
+    <p>CSS</p>
+    <!-- 인용문 -->
+    <blockquote>css는 cascading style sheets의 약자</blockquote>
+    <p>js</p>
+    
+</body>
+</html>

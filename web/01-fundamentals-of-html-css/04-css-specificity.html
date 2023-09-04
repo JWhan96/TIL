@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  h2{
+    color: darkviolet !important;
+  }
+
+  p{
+    color: blue;
+  }
+
+  .orange {
+    color: orange;
+  }
+
+  .green {
+    color: green;
+  }
+
+  #red{
+    color: red;
+  }
+  .pp{
+    font-size: 100px;
+  }
+
+  .ppp{
+    color: greenyellow;
+    font-size: 100px;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .blinking-text {
+    animation: blink 1s infinite; /* 1초 간격으로 무한 반복 */
+  }
+
+  @keyframes zoom {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5); /* 1.5배 확대 */
+  }
+}
+
+.blinking-zoom {
+  animation: blink 2s infinite, zoom 2s infinite; /* 2초 간격으로 무한 반복 */
+  display: inline-block; /* 요소가 텍스트처럼 표시되도록 설정 */
+}
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg); /* 360도 회전 (한 바퀴) */
+  }
+}
+
+.rotating-element {
+  animation: rotateClockwise 4s linear infinite; /* 4초 간격으로 무한 반복 */
+  /* 여기에 요소의 초기 스타일을 지정할 수 있습니다. */
+}
+
+  </style>
+</head>
+
+<body>
+  <p>1</p>
+  <p class="orange">2</p>
+  <p class="green orange">3</p>
+  <p class="orange green">3.5</p>
+  <p id="red" class='orange green'>4</p> 
+  <!-- 우선 순위가 중요/ 순서는 중요X -->
+  <p>5</p>
+  <h2 id="red">6</h2>
+  <p>7</p>
+  <h2>8</h2>
+</body>
+
+</html>
+
+<details class="ppp">
+  <summary>ㅎ</summary>
+  
+  <!-- summary 아래 한칸 공백 두어야함 -->
+  <p class="pp blinking-text blinking-zoom rotating-element" >이건 워때★</p>
+  
+  </details>
+
+  <!-- how to render image in html/MDN -->
