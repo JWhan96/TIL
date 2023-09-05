@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            padding: 20px;
+            margin: 10px;
+        }
+        #box1{
+            background: yellow;
+            /* 왼쪽으로 플로팅 ->기본마진과 패딩이 없다 */
+            float: left;
+        }
+        #box2{
+            background: blue;
+            float: left;
+        }
+        #box3{
+            background: green;
+        }
+        #box4{
+            background: purple;
+            /* 플로팅해제 */
+            clear: left;
+        }
+
+
+    </style>
+</head>
+
+
+<body>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+    <div id="box4">box4</div>
+    
+</body>
+</html>
