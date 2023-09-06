@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous">
+    <style>
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 시멘틱(semantic)태그: HTML태그의 이름만 봐도 그 의미를 알 수 있기 때문에-->
+    <!-- 1.헤더 <header></header>-->    
+    <!-- 맨 위쪽이나 왼쪽에 위치, 검색창이나 사이트 메뉴 삽입 -->
+        <!-- 1-1. 네비게이션 <nav></nav> -->
+        <!-- 다른 위치나 다른 웹문서로 연결하는 링크 -->
+    
+    <header class="d-flex justify-content-center">
+        <div class="d-flex  w-75 bg-primary"> 
+            <div class="p-1 flex-sm-fill fs-1">Dream Jeju</div>
+            <nav class="p-2 flex-fill d-flex align-items-end"><strong><a href="#">단체여행</a></strong></nav>
+            <nav class="p-2 flex-fill d-flex align-items-end"><strong><a href="#">갤러리</a></strong></nav>
+            <nav class="p-2 flex-fill d-flex align-items-end"><strong><a href="#">문의하기</a></strong></nav>
+            <nav class="p-2 flex-fill d-flex align-items-end"><strong><a href="#">맞춤여행</a></strong></nav>
+        </div>  
+    </header>
+
+    
+    <!-- 2. 메인 <main></main>-->
+    <!-- 가장 핵심이 되는 내용 -->
+        <!-- 2-1. 섹션 <section></section> -->
+        <!-- 독립된 콘텐츠 또는 여러개의 콘텐츠를 묶는 용도 -->
+        <!-- 아티클 <article></article> -->
+        <!-- 신문 기사 또는 잡지처럼 웹에서 보여주고 싶은 내용 -->
+    <main class="d-flex align-items-center flex-column">
+        <div class="d-flex w-75 bg-primary-subtle p-5 align-items-center  flex-column"> 
+            <p class=" w-50">
+                귀여운 수달
+            </p>
+            <article class="d-flex w-50 justify-content-between">
+                
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDJfMjg3%2FMDAxNjA2OTEwNTQ0Mzcx.5dsxD3jt0zxtwiA04zp_LhTFo7YUQDllOONJk9PzlW0g._4AI9VQHvKPWkAibC1cBTSHqJVSBwr2ahZrZhVGB51wg.JPEG.sugajimin990217%2FIMG_3479.JPG&type=sc960_832" alt="">
+                <div class="d-flex align-items-center">
+                몸과 마음이 치유되는 <br>
+                수달섬에 오신것을 <br>
+                환영합니다.
+                </div>
+                
+                
+            </article>
+        </div> 
+        <div class="d-flex w-75 bg-primary-subtle p-5 align-items-center  flex-column"> 
+            <p class=" w-50">
+                귀여운 수달
+            </p>
+            <article class="d-flex w-50 justify-content-between">
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMDEyMDJfMjg3%2FMDAxNjA2OTEwNTQ0Mzcx.5dsxD3jt0zxtwiA04zp_LhTFo7YUQDllOONJk9PzlW0g._4AI9VQHvKPWkAibC1cBTSHqJVSBwr2ahZrZhVGB51wg.JPEG.sugajimin990217%2FIMG_3479.JPG&type=sc960_832" alt="">
+                <div class="d-flex align-items-center ">
+                    몸과 마음이 치유되는 <br>
+                수달섬에 오신것을 <br>
+                환영합니다.
+                </div>
+            </article>
+
+        </div> 
+
+    </main>
+        <!-- 3. 어사이드 <ASide></ASide>-->
+    <!-- 사이드바는 필수 요소는 아님, 주로 왼쪽이나 오른쪽에 배치 -->
+    
+    <!-- 4. 푸터 <FOOTer></FOOTer>-->
+    <!-- 맨 아래쪽에 제작정보나 저작권 정보, 연락처 등등.. -->
+    
+    <footer class="d-flex justify-content-center">
+        <div class="d-flex  w-75 bg-primary-subtle"> </div> 
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" 
+    crossorigin="anonymous"></script>    
+</body>
+</html>
