@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 웹 사이트</title>
+    <!-- 구글 폰트 적용 -->
+    <!-- https://fonts.google.com/noto/specimen/Noto+Sans+KR?query=noto+sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- 1. bootstrap적용 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- 구글폰트 CSS 적용 -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- bootstrap nav -->
+
+    <nav class="navbar bg-body-tertiary sticky-top container">
+        <div class="container-fluid ">
+            <!-- <a class="navbar-brand" href="#">Home</a> -->
+            <img style="margin-left: 20px;" class="navbar-brand" src="free-icon-programming-6567206.png" alt=""
+                width="5%" height="50px">
+            <div>
+                포트폴리오
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#frontpage">Frontpage</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">Intro</a>
+                    </li>
+                    
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <!-- 메인 컨텐츠 -->
+
+    <main id="frontpage" class="frontpage container">
+        <p class="w-h-auto1 palign fontlarge">
+            Frontpage
+        </p>
+        <div class="row w-h-auto2">
+            <!-- 같은 행에서 col 4칸씩 차지하게, col만 있어도 알아서 나눠주기는 함 -->
+            <div class="box col-12 justc">
+                <p style="font-size: 100px;">
+                    싸피 10기 교육생
+                </p>
+                <p style="font-size: 80px;">
+                    한진우 입니다.
+                </p>
+            </div>
+            <div class="box col-12 justc">
+                <p style="font-size: 80px;">
+                    비전공자라 어렵지만
+                </p>
+                <p style="font-size: 80px;">
+                    열심히 교육을 받고 노력하고 있습니다.
+                </p>
+            </div>
+            
+        </div>
+        <!-- row(행)영역 지정 -->
+        
+
+
+    </main>
+    <!-- 자기소개 -->
+    <section id="intro" class="intro container">
+        <p class="w-h-auto1 palign fontlarge">Intro</p>
+        <!-- row(행)영역 지정 -->
+        <div class="row w-h-auto2">
+            <!-- 같은 행에서 col 4칸씩 차지하게, col만 있어도 알아서 나눠주기는 함 -->
+            <div  class="box col-md-6 col-sm-12">
+                <img src="./my_photo.jpg" alt="" width="100%"; height="100%";>
+            </div>
+                
+            <div class="box col-md-6 col-sm-12">
+            <div class="row w-h-auto3">
+                    <div class="box col-sm-6 col-lg-12 justc">
+                        <p style="font-size: 50px;">이름</p>
+                        <p style="font-size: 30px;">한진우</p>
+                    </div>
+                    <div class="box col-sm-6 col-lg-12 justc">
+                        <p style="font-size: 50px;">주소지</p>
+                        <p style="font-size: 30px; margin: 0;">인천광역시</p>
+                        <p style="font-size: 30px;">송도</p>
+
+                    </div>
+                
+                    <div class="box col-sm-6 col-lg-12 justc">
+                        <p style="font-size: 50px;">이메일</p>
+                        <p style="font-size: 30px;">chococan16@gmail.com</p>
+                    </div>
+                    <div class="box col-sm-6 col-lg-12 justc">
+                        <p style="font-size: 50px;">전화번호</p>
+                        <p style="font-size: 30px;">010-2540-7432</p>
+
+                    </div>
+                </div>
+            </div>        
+
+            </div>
+            
+        </div>
+    </section>
+    <!-- 프로젝트 -->
+    
+    <!-- 꼬리말 -->
+
+
+
+    <footer class="footer container container-fluid">
+        
+        <p style="margin: 0; font-size: 20px; padding: 0;">
+            진우의 개인 포트폴리오 입니다.
+        </p>
+    
+        <p style="margin: 0; font-size: 20px; padding: 0;">
+            @2023 Jinwoo All Right Reversed
+        </p>
+    
+    </footer>
+
+    <!-- 반응형 웹 -->
+    <!-- bootstrap grid system -->
+
+    <h1 class="not-provided">이 사이트는 470px 사이즈 미만에서는 보이지 않습니다.</h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

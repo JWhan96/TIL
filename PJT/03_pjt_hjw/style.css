@@ -1,0 +1,103 @@
+*{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 30px;
+
+}
+
+.frontpage {
+    /* position: relative; */
+    height: 900px;
+    background-color: lightblue;
+}
+.intro {
+    /* position: relative; */
+    
+    
+}
+.fontlarge{
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.project {
+    height: 900px;
+    background-color: lightblue;
+}
+.footer{
+    height: 50px;
+    background-color: rgba(115, 139, 126, 0.8);
+    color: white;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.alignc{
+    display: flex;
+    align-items: center;
+    
+}
+.justc{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.skills {
+    height: 900px;
+    
+}
+.fixed-top {
+    position: sticky ;
+    top: 0; 
+
+}
+
+
+/* 1. not-provided 클래스를 기본적으로 보이지 않도록 설정 */
+.not-provided{
+    display: none;
+}
+
+/* 2. 470px미만에서는 not-provided만 보이도록 설정*/
+@media(max-width: 470px) {
+    main,
+    section,
+    nav,
+    footer{
+        display: none !important
+    }
+    .not-provided{
+        display: block;
+    }
+    
+}
+
+.box {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    text-align: center;    
+    
+}
+.w-h-auto1{
+    height: 20%;
+    margin: 0;
+}
+.w-h-auto2{
+    width: auto;
+    height: 80%;
+    margin: 0;
+    
+}
+.w-h-auto3{
+    width: auto;
+    height: 100%;
+    
+
+}
+.palign{
+    display: flex;
+    align-items: center;
+}
