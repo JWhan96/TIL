@@ -1,5 +1,5 @@
 """
-URL configuration for firstpjt project.
+URL configuration for prj1 project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -15,17 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path , include
-from articles import views
+from django.urls import path
+from fruits import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('articles/', views.index, name='index'),
-    path('dinner/', views.dinner, name="dinner"),
-    path('search/', views.search, name="search"),
-    path('throw/', views.throw, name= 'throw'),
-    path('catch/', views.catch, name= 'catch'),
-    # <타입:변수명>
-    path('hello/<str:name>/', views.greeting, name='greeting'),
-    path('articles/', include('articles.urls')),
+    path('fruits/', views.fruits)
 ]

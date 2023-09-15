@@ -1,0 +1,14 @@
+{% extends "calculators/base.html" %}
+    
+{% block content %}
+    <h1>연산할 두 숫자를 입력하세요</h1>
+    <form action="", method = 'GET'>
+        <label for="message1">첫번째 숫자 : </label>
+        <input type="number",name = 'num1', id = 'message1'>        
+        <label for="message2">두번째 숫자 : </label>
+        <input type="number",name = 'num2' id = 'message2'>
+        
+        <input type="submit" value = '계산!'>   
+    
+    </form>
+{% endblock content %}

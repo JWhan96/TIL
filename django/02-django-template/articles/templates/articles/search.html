@@ -1,10 +1,15 @@
-{% extends "base.html" %}
+{% extends "articles/base.html" %}
 
 {% block content %}
-  <h1>fake naver</h1>
-  <form action="https://search.naver.com/search.naver/" method="GET">
-    <label for="message">검색어:</label>
-    <input type="text" name="query" id="message">
-    <input type="submit">
-  </form>
+    <h1>fake naver</h1>
+    {% comment %} form은 서버에 데이터를 보내는 형식 {% endcomment %}
+    {% comment %} action: 목적지 url {% endcomment %}
+    <form action="https://search.naver.com/search.naver" method = 'GET'>
+        <label for="message">검색어: </label>
+        {% comment %} name부분이 사용자가 입력을 내보냈을 때 붙는 이름 {% endcomment %}
+        <input type="text" name = 'query' id = 'message'>
+        {% comment %} input된 데이터를 서버러 보내는 명령어 {% endcomment %}
+        <input type="submit">
+
+    </form>
 {% endblock content %}

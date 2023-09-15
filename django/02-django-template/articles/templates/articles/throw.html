@@ -1,10 +1,11 @@
-{% extends "base.html" %}
+{% extends "articles/base.html" %}
 
 {% block content %}
-  <h1>Throw</h1>
-  <form action="/catch/" method="GET">
-    <label for="message">메세지:</label>
-    <input type="text" name="message" id="message">
-    <input type="submit">
-  </form>
+    <h1>Throw</h1>    
+    <form action="/catch/" method = 'GET'>
+    {% comment %} <form action="articles:catch" method = 'GET'> {% endcomment %}
+        <label for="message">검색어: </label>
+        <input type="text" name = 'message' id = 'message'>        
+        <input type="submit">
+    </form>
 {% endblock content %}

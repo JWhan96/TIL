@@ -1,5 +1,7 @@
-{% extends "base.html" %}
+{% extends "articles/base.html" %}
+
+{% comment %} 하위 템플릿이 재정의 할수 있는 공간 {% endcomment %}
 
 {% block content %}
-  <h1>안녕, {{ name }}</h1>
-{% endblock content %}
+    <h1>안녕하세요! {{ name }}</h1>
+{% endblock content %} 
