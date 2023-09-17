@@ -27,5 +27,7 @@ urlpatterns = [
     path('catch/', views.catch, name= 'catch'),
     # <타입:변수명>
     path('hello/<str:name>/', views.greeting, name='greeting'),
+    path('articles/<int:num>/', views.detail),
+    path('articles/<str:name>/', views.detaill),
     path('articles/', include('articles.urls')),
 ]

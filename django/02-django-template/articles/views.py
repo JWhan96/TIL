@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 
 # Create your views here.
@@ -56,3 +55,16 @@ def greeting(request, name):
     }
 
     return render(request, 'articles/greeting.html', context)
+
+def detail(request, num):
+    context = {
+        'num' : num,
+    }
+    return render(request, 'articles/detail.html', context)
+
+def detaill(request, name):
+    context = {
+        'name' : name,
+    }
+
+    return render(request, 'articles/detaill.html', context)
