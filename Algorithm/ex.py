@@ -1,23 +1,23 @@
-from pprint import pprint
-N, M = map(int, input().split())
-K = int(input())
-arr = [list(input()) for _ in range(N)]
+def merge_sort(arr):
+    if len(arr) < 2:
+        return arr
 
-direct = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+    mid = len(arr) // 2
+    low_arr = merge_sort(arr[:mid])
+    high_arr = merge_sort(arr[mid:])
 
-for i in range(N):  #행
-    for j in range(M): #열
-        if arr[i][j] == '@':
-            for ny, nx in direct:  # 방향 지정
-                for k in range(1, K+1): #폭발 범위
+    merged_arr = []
+    l = h = 0
+    while l < len(low_arr) and h < len(high_arr):
+        if low_arr[l] < high_arr[h]:
+            merged_arr.append(low_arr[l])
+            l += 1
+        else:
+            merged_arr.append(high_arr[h])
+            h += 1
+    merged_arr += low_arr[l:]
+    merged_arr += high_arr[h:]
+    return merged_arr
 
-                    dy = i + (k*ny)
-                    dx = j + (k*nx)
-                    if 0<= dy <N and 0<= dx <M:
-                        if arr[dy][dx] == '_':
-                            arr[dy][dx] = '%'
-                        elif arr[dy][dx] == '#':
-                            break
-            arr[i][j] = '%'
-
-pprint(arr)
+arr = [6, 5, 3, 1, 8, 7, 2, 4]
+print(merge_sort(arr))
