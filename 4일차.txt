@@ -1,0 +1,25 @@
+queryset API는 무엇인가?
+
+ORM Create
+첫번째, 두번쨰, 세번째 방법 중 가장 많이 쓰는 방법은 무엇일까?
+
+CRUD Create
+첫 번쨰 방법(정배)
+1.인스턴스를 생성, 각각의 필드를 지정
+2. article.save()
+
+두번째 방법
+1. 인스턴스를 생성, 필드를 한번 모두 지정
+2. article.save()
+
+세번째 방법
+1. 인스턴스를 생성하지 않고 바로 저장
+
+CRUD Read
+
+1. 단일 데이터 조회 get
+2. 다중 데이터 조회 filter  
+
+CRUD Update : 항상 조회가 먼저 이루어 진다 -> 인스턴스에서 수정 -> 반드시  save
+CRUD Delete: 조회먼저
+             
