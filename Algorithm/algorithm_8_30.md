@@ -10,6 +10,7 @@
 - [활동 선택문제]
 - [Baby-jin]
 
+##### 8월 30일
 ### 반복(Iteration)과 재귀(Recursion)
 - 반복과 재귀는 유사한 작업을 수행 가능
 - 반복은 수행하는 작업이 완료될 때까지 계속 반복
@@ -82,3 +83,116 @@
 - 이를 기반으로 그리디 기법이나 DP(동적 계획법)을 이용해서 효율적인 알고리즘을 찾을 수 있다.
 - <span style = 'color:salmon'>우선 완전 검색으로 접근하여 해답을 도출한 후, 성능 개선을 위해 다른 알고리즘을 사용하고 해답을 확인하는 것이 바람직
 
+### 순열(Permutation)
+- 서로 다른 것들 중 몇개를 뽑아서 한 줄로 나열하는 것
+- 서로 다른 n개 중 r개를 택하는 순열은 아래와 같이 표현
+- ![Alt text](img/permu1.png)
+- 그리고 nPr은 다음과 같은 식이 성립
+- ![Alt text](img/permu2.png)
+- nPn은 n!이라고 표기하며 Factorial이라 부름
+- ![Alt text](img/permu3.png)
+  
+### 수열 생성
+1. 단순하게 생성하는 법
+  - {1, 2, 3}을 포함하는 모든 순열을 생성하는 함수
+  ```py
+  # 주어진 집합
+  elements = [1, 2, 3]
+  # 순열 생성 및 출력
+  for i1 in elements:
+      for i2 in elements:
+          if i2 != i1:
+              for i3 in elements:
+                  if i3 != i1 and i3 != i2:
+                      print(i1, i2, i3)
+  ```
+2. 재귀 호출을 통한 순열 생성
+  ```py
+  def perm(i, N, K): # i는 이전에 고른 개수, N개에서 K개를 고르는 순열
+    global cnt
+    if i == K: # 순열 완성 : K를 모두 고른 경우
+        cnt += 1
+        print(cnt, p)
+        return
+    else:
+        for j in range(N): # p[i]에 들어갈 숫자를 결정
+            if used[j] == 0: # 아직 사용되기 전이라면
+                p[i] = card[j]
+                used[j] = 1
+                perm(i + 1, N, K)
+                used[j] = 0
+
+  card = [1, 2, 3, 4, 5]
+  N = 5 # N개의 카드에서
+  K = 3 # K개를 뽑아 만드는 순열
+  used = [0] * N #사용한 카드인지 표시하는 리스트
+  p = [0] * K
+  cnt = 0
+  perm(0, N, K)
+  ```
+
+### 부분 집합(Power set)
+- 집합에 포함된 원소들을 선택하는 것
+- 다수의 중요 알고리즘들이 원소들의 그룹에서 최적의 부분 집합을 찾는 것
+  - ex) 배낭 짐싸기
+- N 개의 원소를 포함한 집합
+  - 자기 자신과 공집합 포함한 모든 부분집합(power set)의 개수는 2^n개
+  - 원소의 수가 증가하면 부분집합의 개수는 지수적으로 증가
+#### 부분 집합 생성
+1. 단순하게 모든 부분 집합 생성
+  - 4개 원소를 포함한 집합에 대한 부분 집합 구하기
+  ```py
+  for i1 in range(2):
+      bit = [0, 0, 0, 0]  # 비트 배열 초기화
+      bit[0] = i1
+      for i2 in range(2):
+          bit[1] = i2
+          for i3 in range(2):
+              bit[2] = i3
+              for i4 in range(2):
+                  bit[3] = i4
+                  print(bit)
+  ```
+2. 바이너리 카운팅을 통한 부분집합 생성
+  ```py
+  a = [1, 2, 3, 4]
+  N = 4
+  ## 나누었을때 중복된 집합들을 없애기 위해
+  # (1<<N)//2 == 1<<(N-1)까지만
+  for i in range(1, (1<<N)//2): # 2의 N승번 반복(1이 왼쪽으로 N번만큼 이동)
+      subset1 = []
+      subset2 = []
+      for j in range(N):
+      
+          if i & (1<<j): #j번 비트가 0이 아니면
+              subset1.append(a[j])
+          else:
+              subset2.append(a[j])
+      
+      print(subset1, subset2)
+  ```
+##### 8월 31일
+### 조합(combination)
+- 서로 다른 n개의 원소 중 r개를 순서없이 골라낸 것
+- 조합의 수식   
+  ![Alt text](img/combination1.png)
+
+#### 조합을 만드는 방법
+- 재귀 호출을 이용해 만들기
+  ```py
+  def ncr(n, r):
+      if r == 0:
+          print(tr)
+      elif n < r: #남은 원소보다 많은 원소를 선택해야 하는 경우
+          return #불가
+      else:
+          tr[r-1] = a[n-1] # a[n-1] 조합에 포함시키는 경우
+          ncr(n-1, r-1)
+          ncr(n-1, r)  # a[n-1]을 포함시키지 않는 경우
+
+  N = 5
+  R = 3
+  a = [1, 2, 3, 4, 5]
+  tr = [0] * R
+  ncr(N, R)
+  ```

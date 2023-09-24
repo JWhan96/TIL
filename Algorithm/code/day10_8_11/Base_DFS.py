@@ -27,50 +27,50 @@ Aij가 1이면 i번 노드에서 j번 노드로 갈수 있다는 것을 의미
 출력예시
 0 1 3 4 2
 '''
-n = int(input())
-st = []
-for i in range(n):
-    st.append(i)
-arr = [list(map(int, input().split())) for _ in range(n)]
-for i in range(n):
-    for j in range(n):
-        if arr[i][j] == 1:
-            arr[j][i] = 1
-def DFS(n, st, V, adj_m):
-    stack = []  #stack 생성
-    visited = [0] * (V+1) #방문점 생성
-    visited[n] = 1 #시작점 방문 표시
-    print(st[n], end = ' ')
-    while True:
-        for w in range(1, V): # 현재 정점 n에 인접하고 미방문 w 찾기
-            if adj_m[n][w] == 1 and visited[w] == 0:
-                stack.append(n)
-                n = w  #새로 옮겨갈 위치 w
-                print(st[n], end = ' ')
-                visited[n] = 1 # w 방문 표시
-                break # for w,n에 인접인 c찾은경우
-        else:
-            if stack: #스택에 지나온 정점이 남아있으면
-                n = stack.pop() #pop해서 다른 w찾을 준비
-            else: #스택이 비어있으면
-                break #탐색끝
-    return
-DFS(0, st, n, arr)
+# n = int(input())
+# st = []
+# for i in range(n):
+#     st.append(i)
+# arr = [list(map(int, input().split())) for _ in range(n)]
+# for i in range(n):
+#     for j in range(n):
+#         if arr[i][j] == 1:
+#             arr[j][i] = 1
+# def DFS(n, st, V, adj_m):
+#     stack = []  #stack 생성
+#     visited = [0] * (V+1) #방문점 생성
+#     visited[n] = 1 #시작점 방문 표시
+#     print(st[n], end = ' ')
+#     while True:
+#         for w in range(1, V): # 현재 정점 n에 인접하고 미방문 w 찾기
+#             if adj_m[n][w] == 1 and visited[w] == 0:
+#                 stack.append(n)
+#                 n = w  #새로 옮겨갈 위치 w
+#                 print(st[n], end = ' ')
+#                 visited[n] = 1 # w 방문 표시
+#                 break # for w,n에 인접인 c찾은경우
+#         else:
+#             if stack: #스택에 지나온 정점이 남아있으면
+#                 n = stack.pop() #pop해서 다른 w찾을 준비
+#             else: #스택이 비어있으면
+#                 break #탐색끝
+#     return
+# DFS(0, st, n, arr)
 
 
-########강사님 코드
-# N = int(input())
-# arr = [list(map(int, input().split())) for _ in range(N)]
-#
-# def DFS(now):
-#     #현재 방문한 노드 출력
-#     print(now, end = ' ')
-#     for i in range(N):
-#         #현재 노드와(now) i번째 노드가 연결되어 있다면
-#         if arr[now][i] == 1:
-#             #재귀적으로 i번째 노드 방문
-#             DFS(i)
+#######강사님 코드
+N = int(input())
+arr = [list(map(int, input().split())) for _ in range(N)]
 
-# 첫번째 노드부터 탐색 시작
-# DFS(0)
+def DFS(now):
+    #현재 방문한 노드 출력
+    print(now, end = ' ')
+    for i in range(N):
+        #현재 노드와(now) i번째 노드가 연결되어 있다면
+        if arr[now][i] == 1:
+            #재귀적으로 i번째 노드 방문
+            DFS(i)
+
+#첫번째 노드부터 탐색 시작
+DFS(0)
 

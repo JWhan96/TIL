@@ -22,7 +22,7 @@
 #     dfs(0, 0, arr[0][0])
 #     print(f'#{tc} {result}')
 
-#$######
+#######
 direct = [(0, 1), (1, 0)]
 
 T = int(input())
@@ -53,9 +53,3 @@ for tc in range(1, T+1):
                 stack.append((ny, nx, sum_v + arr[ny][nx]))
 
     print(f'#{tc} {result}')
-
-
-
-
-
-
