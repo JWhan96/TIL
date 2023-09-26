@@ -60,3 +60,4 @@
 ### 확장자(Plugin)
 - 한글설정: Korean Language Pack
 - Vscode Keymap / Markdown
+- rainbow brackets / indent rainbow
