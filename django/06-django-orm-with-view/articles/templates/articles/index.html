@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <h1>INDEX</h1>
-  <a href="{% url 'articles:new' %}">NEW</a>
-  <hr>
-  {% for article in articles %}
-    <p>글 번호 : {{ article.pk }}</p>
+    <h1>Index</h1>
+    {% for article in articles %}
+    <p>글 번호 : {{article.pk}}</p>
+    {% comment %} url 번호 지정할때 ,없이 변수 공백이후에 넣기 {% endcomment %}
     <a href="{% url "articles:detail" article.pk %}">
-      <p>글 제목 : {{ article.title }}</p>
-    </a>
-    <p>글 내용 : {{ article.content }}</p>
-    <hr>
-  {% endfor %}
+        <p>글 제목 : {{article.title}}</p>
+    </a> 
+    <p>글 내용 : {{article.content}}</p> 
+    <hr>   
+    {% endfor %}
 </body>
 </html>

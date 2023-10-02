@@ -1,27 +1,22 @@
 from django.shortcuts import render, redirect
 from .models import Article
-
-
 # Create your views here.
 def index(request):
     articles = Article.objects.all()
     context = {
-        'articles': articles,
+        'articles' : articles
     }
     return render(request, 'articles/index.html', context)
 
-
 def detail(request, pk):
-    article = Article.objects.get(pk=pk)
+    article = Article.objects.get(pk = pk)
     context = {
-        'article': article,
+        'article' : article
     }
     return render(request, 'articles/detail.html', context)
 
-
 def new(request):
     return render(request, 'articles/new.html')
-
 
 def create(request):
     title = request.POST.get('title')
@@ -31,7 +26,7 @@ def create(request):
     # article = Article()
     # article.title = title
     # article.content = content
-    # article.save()
+    # article.save()  
 
     # 2
     article = Article(title=title, content=content)
@@ -39,10 +34,10 @@ def create(request):
 
     # 3
     # Article.objects.create(title=title, content=content)
-
+    
     # return render(request, 'articles/create.html')
+    # 바로 이 url로 돌아가는 메서드
     return redirect('articles:index')
-
 
 def delete(request, pk):
     # 몇 번 게시글을 삭제할 것인지 조회
