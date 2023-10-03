@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block context %}
+{% comment %} <h1>게시글 작성</h1>
+<hr>
+<input type="text"> {% endcomment %}
+<h1>게시글 작성</h1>
+<hr>
+<form action="{% url "articles:create" %}" method = 'POST'> 
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value = '제출'>
+</form>
+{% endblock context %}
+
+

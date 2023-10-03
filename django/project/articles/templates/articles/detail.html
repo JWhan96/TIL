@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block context %}
+
+<h1> {{article.title}}</h1>
+<p>생성 시간 : {{article.created_at}}</p>
+<p>업데이트 : {{article.updated_at}}</p>
+<hr>
+<a href="{%url "articles:edit" article.pk%}" >수정</a>
+<p>{{article.content}}</p>
+<br>
+<a href="{%url "articles:index"%}">뒤로</a>
+<br>
+<form action="{% url "articles:delete" article.pk %}" method = 'POST'>
+  {% csrf_token %}
+  <input type="submit" value = '삭제'>
+</form>
+{% endblock context %}
