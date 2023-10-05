@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>로그인1</h1>
+  <form action="{% url "accounts:login" %}" method = "POST">
+    {% csrf_token %}
+    POST값으로 줄때
+    <input type="hidden" name = 'next' value = "{{request.GET.next}}">     
+    
+    {{form.as_p}}
+    <input type="submit">
+  
+  </form>
+  
+
+  <h1>로그인2</h1>  
+  <form action="{% url "accounts:login" %}?next={{request.GET.next}}" method = "POST">
+    {% csrf_token %}
+    GET값으로 줄때
+    
+    
+    {{form.as_p}}
+    <input type="submit">
+  
+  </form>
+  
+
+<h1>로그인3</h1>
+  <form action="" method = "POST">
+    {% csrf_token %}     
+    비어있을 때
+    {{form.as_p}}
+    <input type="submit">
+  
+  </form>
+
+{% endblock content %}
+
+
