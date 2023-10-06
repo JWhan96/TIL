@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>DETAIL PAGE</h2>
+  <h2>제목: {{ movie.title }}</h2>
+  <hr>
+  
+  <p>내용: {{ movie.description }}</p>
+  <p>작성 시각: {{ movie.created_at }}</p>
+  <p>수정 시각: {{ movie.updated_at }}</p>
+  <hr>
+
+  <div class="d-flex">
+  <form action="{% url "movies:update" movie.pk %}">
+    <input type="submit" value = 'UPDATE'>
+  </form>
+    
+  <form action="{% url "movies:delete" movie.pk %}" method="POST">
+    {% csrf_token %}
+    <input type="submit" value="DELETE">
+  </form>
+</div>
+<hr>
+  <form action="{% url "movies:index" %}">
+    <input type="submit", value = 'BACK'>
+  </form>
+
+  {% endblock content %}
