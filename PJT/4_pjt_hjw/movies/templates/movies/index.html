@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 dt>Index Pages</h1>
+<hr>
+{% if user.is_authenticated  %}
+<h3>{{user.username}}님 안녕하세요</h3>
+
+<hr>
+  
+
+  
+  
+  
+
+  
+{% for movie in movies %}
+  
+<div class="card">
+  <div class="card-header">
+    <p>{{movie.title}}</p>
+  </div>
+  <div class="card-body">
+    
+    <p class="card-text">{{movie.description}}</p>
+    <a href="{% url "movies:detail" movie.pk %}" class="btn btn-primary">Detail</a>
+  </div>
+</div>
+{% endfor %}
+
+{% endif %}
+
+
+
+{% endblock content %}
