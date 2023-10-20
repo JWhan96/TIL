@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>DETAIL PAGE</h1>
+  <br>
+  <h3>{{ movie.title }}</h3>
+  <p>{{ movie.content }}</p>
+  {% comment %} <p>작성 시각: {{ movie.created_at }}</p>
+  <p>수정 시각: {{ movie.updated_at }}</p> {% endcomment %}
+  <p>장르: {{ movie.genre }}</p>
+  <p>평점: {{ movie.rating }}</p>
+  <hr>
+  {% if request.user == movie.user %}
+    <div class="d-flex">
+      
+      <form action="{% url "movies:update" movie.pk %}">
+        <input type="submit" class="btn btn-secondary" value = 'UPDATE'>
+      </form>       
+      <form action="{% url "movies:delete" movie.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="DELETE" style="margin-left: 5px;">
+      </form>    
+    </div>
+    <hr>
+  {% endif %}
+
+  <h4>댓글 목록</h4>
+  <ul class="list-unstyled"> <!-- list-unstyled 클래스를 사용하여 목록 스타일 제거 -->
+    {% for comment in comments %}
+    <li class="border p-2"> <!-- 각 댓글을 상자 안에 넣기 위해 mb-3 클래스를 사용하여 마진을 추가 -->
+      <div class="d-flex justify-content-between">
+        {{comment.user.username}} - {{comment.content}}
+        {% if request.user == comment.user %}
+          <form action="{% url "movies:comments_delete" movie.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="DELETE">
+          </form>
+        {% endif %}
+      </div>
+    </li>
+    {%empty%}
+    <p>댓글이 없어용</p>
+    {% endfor %}
+  </ul>
+  <form action="{% url "movies:comments_create" movie.pk %}"  method = 'POST'>
+    {% csrf_token %}
+    {{comment_form}}
+    <input type="submit">
+
+  </form>  
+  <hr>
+  <form action="{% url "movies:index" %}">
+    <input type="submit"  class="btn btn-primary" value = 'BACK'>
+  </form>
+{% endblock content %}

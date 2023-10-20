@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>INDEX PAGE</h1>
+  <hr>
+  {% comment %} {% if user.is_authenticated  %} {% endcomment %}
+  {% comment %} <h3>{{user.username}}님 안녕하세요</h3> {% endcomment %}
+  {% comment %} <hr>     {% endcomment %}
+  <div class="row">
+    {% for movie in movies %}      
+      <div class="col-md-12 col-lg-6 mb-4">
+        <div class="card">      
+          <div class="card-header">
+            <a href="{% url "movies:detail" movie.pk %}">{{movie.title}}</a>
+          </div>
+          <div class="card-body">
+          <p>작성자 : 
+            <a href="{% url "accounts:profile" movie.user.username %}">{{ movie.user }}</a></p>
+
+
+                  
+            <p class="card-text">{{movie.content}}</p>
+            <div class= 'd-flex justify-content-between'>
+            <div>
+              좋아요 {{movie.like_users.count}}
+            </div>
+            {% if user.is_authenticated %}
+              <div>
+                <form action="{% url "movies:likes" movie.pk %}" method="POST">
+                  {% csrf_token %}
+                  {% if request.user in movie.like_users.all %}
+                    <input type="submit" value="좋아요 취소">
+                  {% else %}
+                    <input type="submit" value="좋아요">
+                  {% endif %}
+                </form>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  {% comment %} {% endif %} {% endcomment %}
+
+
+{% endblock content %}
