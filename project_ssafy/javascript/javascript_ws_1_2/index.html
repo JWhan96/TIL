@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>오늘 할 일</h1>
+  <hr>
+  <ul>
+    <li>수업 복습 하기</li>
+    <li>실습 문제 풀기</li>
+    <li>스터디 참여하기</li>
+    <li>1 일 1 커밋하기</li>
+    <li id="game">게임 하기</li>
+  </ul>
+  <script>
+    // 아래에 코드 작성
+    const h1Tag = document.querySelector('h1')
+    h1Tag.textContent = '오늘 공부 목록'
+
+    const ulTag = document.querySelector('ul')
+    ulTag.classList.add('study class')
+
+    const ulidTag = document.querySelector('ul #game')
+    ulidTag.remove()
+    
+  </script>
+</body>
+</html>
