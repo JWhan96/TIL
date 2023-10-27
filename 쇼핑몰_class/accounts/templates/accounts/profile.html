@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ user.username }}유저 페이지</h1>
+<hr>
+
+<h3>장바구니에 담은 상품들</h3>
+<br>
+{% for product in user.cart.all %}
+<div class="d-flex justify-content-between">
+      
+  <p>{{ forloop.counter }} : {{ product.title }}</p>     
+  <input type="삭제하기" class="btn btn-danger" value="삭제하기"> 
+  <a href="{% url "shop:addcart" %}"></a>
+</div>  
+
+
+  
+  <hr>
+{% empty %}
+<p>담긴 상품이 없습니다.</p>
+{% endfor %}
+{% endblock content %}
+

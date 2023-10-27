@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+  <h1>메인 페이지</h1>  
+  <p>{{ user.username }}</p>
+  <div class="row">
+  {% for product in products %}
+    <div class="col-3 card" >
+      <img src="{{ product.image }}" class="card-img-top" alt="..." style = 'height: 300px;'>
+      <div class="card-body">
+        <h5 class="card-title">{{ prduct.title }}</h5>
+        <p class="card-text">{{ product.description|truncatechars:20}}</p>
+        <div class='d-flex justify-content-between'>
+        <p class="card-text">가격: \{{ product.price|intcomma }}</p>
+        <!-- 로그인된 사용자만 장바구니 버튼을 출력 -->
+        
+        {% if user.is_authenticated %}
+          {% if product in user.cart.all %}
+            <a href="{% url "shop:addcart" product.id %}" style='color: inherit;'>
+              <i class="fa-solid fa-star fa-spin"></i>
+            </a>
+          {% else %}
+          <a href="{% url "shop:addcart" product.id %}" style='color: inherit;'>
+            <i class="fa-regular fa-star fa-spin"></i>
+          </a>
+          {% endif %}
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  
+  {% endfor %}
+  </div>
+  
+  
+  
+  
+    
+  
+{% endblock content %}
+
