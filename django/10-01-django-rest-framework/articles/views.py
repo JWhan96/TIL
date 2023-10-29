@@ -10,7 +10,7 @@ from .serializers import ArticleListSerializer, ArticleSerializer
 def article_list(request):
     if request.method == 'GET':
         articles = Article.objects.all()
-        serializer = ArticleListSerializer(articles, many = True)
+        serializer = ArticleListSerializer(articles, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
