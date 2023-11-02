@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .completed {
+      text-decoration: line-through;
+      color: silver
+    }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <div id="app">
+    <h1>할일 목록</h1>
+    <div>
+      <input type="text" @keyup.enter='addTodo' v-model="newTodo">
+      <button v-on:click ='addTodo'>추가</button>
+    </div>
+    <!-- {{ newTodo }} -->
+    <!-- 할일 목록 나열 -->
+    <ul>
+      <!-- vue는 렌더링 시 '변경된 부분만' 최소한으로 재랜더링함 -->
+      <!-- 즉 내가 지금 당장 필요없는 부분은 신경 쓰지 않음 -->
+      <!-- ex> 3번째 todo를 삭제 -> -->
+      <!-- delTodo(현재기준 3index) -> -->
+      <!-- toggleTodoStatus(현재 기준 3번째 todo- 사실은 4번째 todo) -->
+      <!-- 내부적으로 효율적인 구조로 인해서 우리가 신경써야할 부분이 많음 -->
+      <!-- 내부적인 구조: virtual DOM검색 -->
+      <li v-for="(todo, index) in todos" :key='todo.id' @click="toggleTodoStatus(todo)" :class="{ 'completed': todo.completed }">
+        <div>
+          {{ index }}: {{ todo.text }}
+          <button @click="delTodo(index)">삭제</button>
+        </div>
+        <hr>
+      </li>
+    </ul>
+    
+    <!-- v-if: 요소자체가 아예 사라짐 -->
+    <button v-if="todoCount" @click="delCompletedTodos">완료된 할일 삭제</button>
+
+    <!-- v-show: display none상태 - 우리 눈에만 안보인다 -->
+    <!-- <button v-show="todoCount" @click="delCompletedTodos">완료된 할일 삭제</button> -->
+
+    <!-- <button v-if="todoCount()" @click="delCompletedTodos">완료된 할일 삭제</button> -->
+    <!-- <button v-if="todos.filter((todo) => todo.completed).length > 0" @click="delCompletedTodos">완료된 할일 삭제</button> -->
+
+  
+  </div>
+
+  <script src="./example.js"></script>
+</body>
+</html>
