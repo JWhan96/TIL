@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
+  <h1>Detail Page</h1>
+  <hr>
+  <h2>{{ movie.title }}</h2>
+  <hr>
+  <P>줄거리 
+    {{ movie.overview }} </P>
+  <div style="display: flex;">
+    <div>
+      <img src="{{movie.poster_path}}" alt="" srcset="">
+    </div>  
+    <div>
+      <p>개봉일:
+        {{ movie.release_date }}</p>
+      <p>장르:
+        {% for genre in movie.genres.all %}
+          {{ genre.name }}
+          {% if not forloop.last %},
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p>인기도:
+        {{ movie.popularity }}</p>
+      <p>별점 수:
+        {{ movie.vote_count}}</p>
+      <p>별점 평균:
+        {{ movie.vote_average}}</p>
+    </div>
+  </div>
+  <a href="{% url "movies:index" %}">홈으로</a>
 
+  
 {% endblock %}

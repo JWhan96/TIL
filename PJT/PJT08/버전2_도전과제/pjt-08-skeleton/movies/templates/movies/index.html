@@ -2,36 +2,24 @@
 
 {% block content %}
   <h1>Movies</h1>
-  {% comment %} {% for movie in movies  %}
-  {{ movie.title }}
-  <br>
-  {{ movie.overview }}
-  <br>
-  {{ movie.poster_path }}
-  <br>
-  
-  {% for genre in genres %}
-    {{genre.movie_id }}
-    {% if genre == movie.id %}
-      {{ genre }}
-    {% else %}
-      나와라
-    {% endif %}
-  {% endfor %}
-  <hr>
-  {% endfor %} {% endcomment %}
+
   {% for movie in movies %}
-  <h2>{{ movie.title }}</h2>
-  <p>장르: 
-    {% for genre in movie.genres.all %}
-      {{ genre.name }}
-      {% if not forloop.last %}, {% endif %}
-    {% endfor %}
-  </p>
-  <img src="{{movie.poster_path}}" alt="" srcset="">
-  <p>개봉일: {{ movie.release_date }}</p>
-  <p>인기도: {{ movie.popularity }}</p>
-  <hr>
-  
-{% endfor %}
+    <h2>{{ movie.title }}</h2>
+    <p>개봉일:
+      {{ movie.release_date }}</p>
+      <p>장르:
+        {% for genre in movie.genres.all %}
+        {{ genre.name }}
+        {% if not forloop.last %},
+        {% endif %}
+        {% endfor %}
+      </p>
+      <a href="{% url "movies:detail" movie.pk %}">자세히</a>
+      <p><img src="{{movie.poster_path}}" alt="" srcset=""></p>
+      
+    <hr>
+
+    
+
+  {% endfor %}
 {% endblock %}
