@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <img :src="imageSrc" alt="#">
+    
+    <img v-if="showImage" :src="imageSrc" alt="#">  
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const { createApp, ref, onMounted } = Vue
+
+    const app = createApp({
+      setup() {
+        const imageSrc = ref('https://picsum.photos/200/')
+        const showImage = ref(false) 
+        onMounted(() => {
+          // 3초 후에 두 번째 이미지를 표시하기 위해 setTimeout을 사용합니다.
+          setTimeout(() => {
+            showImage.value = true;
+          }, 3000);
+        });
+        
+        return {
+          imageSrc,
+          showImage,
+
+        }
+
+      }
+      
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+
+</html>

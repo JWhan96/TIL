@@ -10,7 +10,21 @@
 <body>
   <div id="app">
     <!-- template syntax -->
-
+    <p>Mesage: {{ msg }}</p>
+    <div v-html="rawHtml"></div>
+    <div v-bind:id="dynamicId"></div>
+    <div>{{ number + 1 }}</div>
+    <div>{{ ok ? 'YES' : 'NO'}}</div>
+    <div>{{ msg.split('').reverse().join('') }}</div>
+    <div v-bind:id="`list-${id}`"></div>
+    <div v-if="seen">Hi Hello</div>
+    <div>
+      <a v-bind:href="myUrl">Link</a>
+    </div>
+    <button v-on:click="doSomething">Button</button>
+    <form @submit.prevent="onSubmit">
+      <input type="submit">
+    </form>
     <!-- directive -->
   </div>
 
@@ -20,9 +34,10 @@
 
     const app = createApp({
       setup() {
-        const msg = 'Hello'
+        const msg = ref('Hello')
         const rawHtml = ref('<span style="color:red">This should be red.</span>')
         const dynamicId = ref('my-id')
+        // const dynamicId = ref(null) // 랜더링 요소에서 제거
         const number = ref(1)
         const ok = ref(false)
         const seen = ref(true)

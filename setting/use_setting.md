@@ -45,8 +45,8 @@
 
 
 ### 확장자
-- 한글설정: Korean Language Pack for Visual Studio code 
-- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons
+- 한글설정: Korean Language Pack for Visual Studio code
+- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons / 
 - 쥬피터: Jupyter / 
 - 장고 및 웹(4): Django / SQlite / Auto Rename Tag / Highlight Matching Tag 
 

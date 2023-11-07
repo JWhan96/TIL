@@ -19,7 +19,7 @@
 <body>
   <div id="app">
     <!-- Binding to Objects -->
-    <div>Text</div>
+    <div :class="{ active: isActive }">Text</div>
     <div class="static">Text</div>
     <div class="static">Text</div>
 
@@ -34,7 +34,10 @@
 
     const app = createApp({
       setup() {
-        return {}
+        const isActive = ref(true)
+        return {
+          isActive,
+        }
       }
     })
 
