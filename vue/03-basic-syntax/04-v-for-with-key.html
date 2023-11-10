@@ -9,11 +9,11 @@
 
 <body>
   <div id="app">
-    <p>{{ inputText1 }}</p>
-    <input :value="inputText1" @input="onInput">
-
-    <p>{{ inputText2 }}</p>
-    <input type="text" v-model="inputText2">
+    <!-- Maintaining State with key -->
+    <div v-for="item in items" :key="item.id">
+      <!-- content -->
+      {{ item }}
+    </div>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -22,18 +22,16 @@
 
     const app = createApp({
       setup() {
-        const inputText1 = ref('')
-        const onInput = function(event){
-          inputText1.value = event.currentTarget.value
-        }
-        const inputText2 = ref('')
-        return {
-          inputText1,
-          onInput,
-          inputText2,
+        let id = 0
 
+        const items = ref([
+          { id: id++, name: 'Alice' },
+          { id: id++, name: 'Bella' },
+        ])
+
+        return {
+          items,
         }
-        
       }
     })
 
