@@ -22,6 +22,7 @@
 
     <!-- 2. method (computed가 불가능한 중첩된 v-for) -->
     <ul v-for="numbers in numberSets">
+        {{numbers}}
       <li v-for="num in evenNumberSets(numbers)">
         {{ num }}
       </li>

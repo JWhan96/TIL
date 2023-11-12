@@ -34,6 +34,7 @@
 
         const messageWatch = watch(message, (newValue, oldValue) => {
           messageLength.value = newValue.length
+          console.log(`newValue: ${newValue}, old Value: ${oldValue}`)
         })
 
         return {
