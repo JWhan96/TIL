@@ -10,13 +10,17 @@
 <body>
   <div id="app">
     <div v-for="(item, index) in myArr">
-      {{ index }} // {{ item.name }}
+      {{ index }} // {{ item.name }} // {{ item.age }}
+    <br>
+      {{ item.name }} // {{ index }}
+      <hr>
+      
     </div>
-    
+    <p>다음</p>
     <div v-for="(value, key, index) in myObj">
       {{ index }} / {{ key }} / {{ value }}
     </div>
-
+    <p>다음</p>
     <!-- v-for on <template> -->
     <ul>
       <template v-for="item in myArr">
@@ -25,14 +29,14 @@
         <hr>
       </template>
     </ul>
-
+    <p>다음</p>
     <!-- nested v-for -->
     <ul v-for="item in myInfo">
       <li v-for="friend in item.friends">
         {{ item.name }} - {{ friend }}
       </li>
     </ul>
-
+    <p>다음</p>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

@@ -14,8 +14,9 @@
       <!-- content -->
       {{ item }}
     </div>
+    {{ id }}
   </div>
-
+  
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script>
     const { createApp, ref } = Vue
@@ -31,6 +32,8 @@
 
         return {
           items,
+          id,
+
         }
       }
     })
