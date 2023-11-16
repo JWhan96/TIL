@@ -9,6 +9,7 @@ from .serializers import ArticleListSerializer, ArticleSerializer
 @api_view(['GET', 'POST'])
 def article_list(request):
     if request.method == 'GET':
+        # print(request.GET)
         articles = Article.objects.all()
         serializer = ArticleListSerializer(articles, many=True)
         return Response(serializer.data)
@@ -25,9 +26,19 @@ def article_list(request):
 def article_detail(request, article_pk):
     article = Article.objects.get(pk=article_pk)
     if request.method == 'GET':
+        print(request.GET)
+        category = request.GET.get('category')
+        name = request.GET.get('name')
+        print(category)
+        print(name)
+        print(type(category))
         serializer = ArticleSerializer(article)
-        return Response(serializer.data)
-    
+        if category == '3434':
+            return Response(serializer.data)
+        else:
+            print(serializer.errors)
+            return Response(status=status.HTTP_400_BAD_REQUEST)
+        
     elif request.method == 'DELETE':
         article.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
