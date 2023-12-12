@@ -5,6 +5,12 @@
 
 ### 기본 설정
 
+### 확장자
+- 한글설정: Korean Language Pack for Visual Studio code
+- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons / 
+- 쥬피터: Jupyter / 
+- 장고 및 웹(4): Django / SQlite / Auto Rename Tag / Highlight Matching Tag 
+
 - 단축키 지정: >preferences: open keyboard shortcuts/바로가기키(검색창) -> Python run, Python debug
 - 마우스 휠 조정: file>preference>setting> mouse검색
 - Json 설정: > Preferences: Open User Settings(Json)
@@ -44,11 +50,6 @@
 ```
 
 
-### 확장자
-- 한글설정: Korean Language Pack for Visual Studio code
-- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons / 
-- 쥬피터: Jupyter / 
-- 장고 및 웹(4): Django / SQlite / Auto Rename Tag / Highlight Matching Tag 
 
 
 ## pycham
