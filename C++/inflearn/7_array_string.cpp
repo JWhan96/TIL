@@ -24,7 +24,7 @@ int main() {
   ///////////////////////////////////////////////////
 
   // 문자열 : 문자의 열
-  char a[5] = { 'H', 'e', 'l', 'l', 'o'}; //HelloJf
+  char a[5] = { 'H', 'e', 'l', 'l', 'o'}; //Hello@jgier
   char b[6] = { 'H', 'e', 'l', 'l', 'o'}; //Hello
   char c[6] = { 'H', 'e', 'l', 'l', 'o', '\0'}; //Hello
   char d[] = { 'H', 'e', 'l', 'l', 'o', '\0'}; //Hello
