@@ -9,7 +9,7 @@ int main(){
     char name1[Size];
     char name2[Size] = "C++programing";
 
-    cout << "안녕하세요! 저는 " << name2;
+    cout << "안녕하세요 저는 " << name2;
     cout << "입니다! 성함이 어떻게 되시나요?\n";
     cin >> name1;
     //cin.get(name1, Size);
@@ -20,6 +20,6 @@ int main(){
     name2[3] = '\0';
     cout << "제 이름의 처음 세 문자는 다음과 같습니다: ";
     cout << name2 << endl;
-
+    
     return 0;
 }
