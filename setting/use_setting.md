@@ -7,9 +7,12 @@
 
 ### 확장자
 - 한글설정: Korean Language Pack for Visual Studio code
-- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons / tabout / coderunner
+- python관련(6): Bracket pair color dlw / indent-rainbow / Live Server / Markdown All in One / Python / vscode-icons / tabout / Code Runner
 - 쥬피터: Jupyter / 
 - 장고 및 웹(4): Django / SQlite / Auto Rename Tag / Highlight Matching Tag 
+- c++ : c/c++ / 자동으로 추천해주는 c++ extension
+- cpp: "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt < input.txt"
+- code runner설정: Ignore Selection 체크, Run In Terminal 체크
 
 - 단축키 지정: >preferences: open keyboard shortcuts/바로가기키(검색창) -> Python run, Python debug
 - 마우스 휠 조정: file>preference>setting> mouse검색
