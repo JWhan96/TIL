@@ -23,7 +23,7 @@ int main(){
 
     // 강제적으로 데이터형 변환
     // typeName(a) or (typeName)a
-    char ch = 'M';
+    char ch = '3';
     cout << (int)ch << " " << int(ch) << endl;
     // static_cast<typeName>a
     cout << static_cast<int>(ch) << endl;
