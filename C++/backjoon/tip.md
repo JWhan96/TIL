@@ -26,13 +26,57 @@
     cout << a[2] << endl;
     // 출력 40 80 60
   ```
+## for 문의 2가지 방법
+```c++
+#include <iostream>
+#include <string>
+
+string word;
+int n;
+for (char ch : word){
+  '범위 기반 for 루프-각 문자를 순회'
+} 
+for (int i=0; i<=n; i++){
+  '원하는 값까지 인덱스 순회'
+}
+```
 
 ## 배열 뒤집기
 - #include <algorithm>
 - reverse(arr+start-1, arr + end);
 
+## 문자열 뒤집기 and 문자열 숫자로 바꾸기
+```c++
+#include <iostream>
+#include <algorithm>
+#include <string>
+
+using namespace std;
+
+int main() {
+  string a, b;
+  cin >> a >> b;
+  
+  reverse(a.begin(), a.end()); // reverse(a[0], a[-1]) 와 같이 이용하면 안 된다
+  reverse(b.begin(), b.end());
+  
+  cout << max(stoi(a), stoi(b)); // 문자열을 정수로 바꿔주는 메서드(string include해야함)
+
+  return 0;
+
+}
+```
+
 ## 인풋, 초기화 틀
 - 15552_빠른 A+B 참고
+
+## A~Z까지 배열 만들기(아스키코드 이용)
+```c++
+char arr1[26]; // 26개의 알파벳 + 널 문자('\0')을 포함하여 크기를 27로 설정 
+for (int i = 0; i < 26; i++) {
+  arr1[i] = 'A' + i; // 알파벳 순서대로 배열에 저장(A=65)
+}
+```
 
 ## 위치바꾸기(swap)
 ```c++
