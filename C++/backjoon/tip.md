@@ -1,4 +1,45 @@
-# 배열 입력
+## 입력 방법
+```c++
+// 입력 = Hello World!
+cin >> a;
+cout << a;
+//출력 = Hello
+```
+
+```c++
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  string a; // 문자열로 변경
+  while (getline(cin, a)) { // 문자열로 한 줄씩 입력 받음
+    cout << a << endl; // 개행문자를 포함하여 출력
+  }
+  return 0;
+}
+```
+```c++
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  int n, b;  
+  cin >> n;  //cin >> n 코드가 버퍼에 개행 문자('\n')을 남겨둠
+  cin.ignore(); // cin.ignore() 함수를 사용하여 버퍼를 비워주는 것
+  string a;
+  while (getline(cin, a)){
+    b = a.length();
+    cout << a[0] << a[b-1] << endl;
+  }
+  return 0;
+}
+```
+참고- [c++입력받기](https://knowable.tistory.com/24)
+
+## 배열 입력
 - 입력: 3 40 80 60
 - char[]
   ```c++

@@ -6,6 +6,7 @@
     "**/requirements{/**,*}.{txt,in}": "pip-requirements",
     "xstring": "cpp",
     "string": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "vector": "cpp"
   }
 }
