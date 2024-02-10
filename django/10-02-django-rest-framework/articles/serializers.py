@@ -6,13 +6,11 @@ class CommentSerializer(serializers.ModelSerializer):
         class Meta:
             model = Article
             fields = ('id', 'title',)
-    
-    article = ArticleTitleSerializer(read_only=True)
 
     class Meta:
         model = Comment
         fields = '__all__'
-        # read_only_fields = ('article',)
+        read_only_fields = ('article',)
 
 
 class ArticleListSerializer(serializers.ModelSerializer):
