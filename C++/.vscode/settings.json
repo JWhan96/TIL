@@ -45,6 +45,8 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "numeric": "cpp"
+    "numeric": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp"
   }
 }
