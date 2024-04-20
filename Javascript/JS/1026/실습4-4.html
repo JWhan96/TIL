@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .done {
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <form action="/todos/">
+    <input type="text">
+    <button>Todo</button>
+  </form>
+  <ul></ul>
+
+<script>
+    const form = document.querySelector('form');
+    const btn = document.querySelector('button');
+    const inputText = document.querySelector('input');
+    const ul = document.querySelector("ul");
+    
+    function addTodo (event) {
+        event.preventDefault();
+        if (inputText.value == "") {
+            alert("값을 입력해 주세요.")
+        }
+        else {
+            const div = document.createElement("div");
+            const li = document.createElement("li");
+            const closeBtn = document.createElement('button');
+            li.textContent = inputText.value;
+            li.addEventListener("click", (e) => {
+                if (e.target.classList.contains("done")) {
+                    e.target.classList.remove("done")
+                } else {
+                    e.target.classList.add("done");
+                }
+            })
+            div.style.display = "flex";
+            closeBtn.textContent = "X";
+            closeBtn.addEventListener("click", (e) => {
+                ul.removeChild(e.target.parentElement);
+            });
+            div.append(li,closeBtn);
+            ul.appendChild(div);
+            inputText.value = ""
+        }
+  }
+
+  form.addEventListener('submit', addTodo)
+</script>
+</body>
+</html>
