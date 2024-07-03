@@ -14,6 +14,26 @@
 - cpp: "cpp": "cd $dir && g++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt < input.txt"
 - code runner설정: Ignore Selection 체크, Run In Terminal 체크
 
+- 자동 포맷터
+- Clang-Format / 
+```
+// 기본 포매터를 정의합니다.
+"editor.defaultFormatter": "ms-vscode.cpptools",
+// 저장할 때 코드를 포매팅합니다.
+"editor.formatOnSave": true,
+// 코드 포매팅 스타일을 정의합니다.
+"C_Cpp.clang_format_fallbackStyle": "Google",
+
+LLVM: LLVM coding standards
+Google: Google's C++ style guide
+Chromium: Chromium's style guide
+Mozilla: Mozilla's style guide
+WebKit: WebKit's style guide
+Microsoft: Microsoft's style guide
+GNU: GNU coding standards
+```
+
+
 - 단축키 지정: >preferences: open keyboard shortcuts/바로가기키(검색창) -> Python run, Python debug
 - 마우스 휠 조정: file>preference>setting> mouse검색
 - Json 설정: > Preferences: Open User Settings(Json)
